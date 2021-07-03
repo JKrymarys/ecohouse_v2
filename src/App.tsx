@@ -1,14 +1,17 @@
 import React from "react";
 import "./App.css";
 
-import HouseInfo from 'components/house-info/HouseInfo';
+import HouseInfo from "components/house-info/HouseInfo";
+import TempGraph from "components/tempGraph/TempGraph";
 
 function App() {
   return (
     <div>
       <h1>Eco house v2</h1>
       <HouseInfo />
-    </div>)
+      <TempGraph />
+    </div>
+  );
 }
 
 export default App;
