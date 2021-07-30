@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.css";
 
 import HouseInfo from "components/house-info/HouseInfo";
