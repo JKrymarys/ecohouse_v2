@@ -5,6 +5,7 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
+  "homepage": "https://jkrymarys.github.io/ecohouse_v2/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
