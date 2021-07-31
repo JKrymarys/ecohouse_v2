@@ -39,7 +39,7 @@ export default function TempGraph() {
 
   useEffect(() => {
     createChart(tempTimeseriesData, labels);
-  }, []);
+  }, [labels, tempTimeseriesData]);
 
   return (
     <div className="temp-chart">
