@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Chart from "chart.js/auto";
 
@@ -39,7 +39,7 @@ export default function TempGraph() {
 
   useEffect(() => {
     createChart(tempTimeseriesData, labels);
-  }, []);
+  }, [labels, tempTimeseriesData]);
 
   return (
     <div className="temp-chart">

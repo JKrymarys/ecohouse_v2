@@ -28,12 +28,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "eslint:recommended"
     ]
   },
   "browserslist": {
@@ -54,8 +56,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
-    ]
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier --write",
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
   }
 }
