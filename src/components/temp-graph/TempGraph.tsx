@@ -2,29 +2,31 @@ import { useEffect } from "react";
 
 import Chart from "chart.js/auto";
 
-import { dummyTempData } from "utils/dummyData";
+import { getHistoricData } from "utils/backend";
+
+import { TempEntry } from "utils/types";
 
 import "./TempGraph.scss";
+import { useState } from "react";
 
-// import "./HouseInfo.scss";
-
-// interface CurrentHouseState {
-//   datetime: string;
-//   pressure: number;
-//   temp: number;
-// }
+function updateData(chart: any, data: number[], labels: string[]) {
+  chart.data.labels = labels;
+  chart.data.datasets[0].data = data;
+  chart.update();
+}
 
 const createChart = (data: number[], labels: string[]) => {
   return new Chart("myChart", {
     type: "line",
-
     data: {
       labels: labels,
       datasets: [
         {
           data: data,
           borderWidth: 1,
-          borderColor: "red",
+          borderColor: "#AB2B00",
+          backgroundColor: "#D13400",
+          label: "Temp",
         },
       ],
     },
@@ -32,14 +34,28 @@ const createChart = (data: number[], labels: string[]) => {
 };
 
 export default function TempGraph() {
-  const tempTimeseriesData = dummyTempData.map((e) => e.temp);
-  const labels = dummyTempData.map((e) => e.dateTime);
+  const [historicData, setHistoricData] = useState<any>([]);
+  const [chartRef, setChartRef] = useState<any>();
 
-  console.log("tempTimeseriesData", tempTimeseriesData);
+  const tempTimeseriesData = historicData.map(({ temp }: TempEntry) => temp);
+  const labels = historicData.map(({ dateTime }: TempEntry) => dateTime);
 
   useEffect(() => {
-    createChart(tempTimeseriesData, labels);
-  }, [labels, tempTimeseriesData]);
+    getHistoricData().then(setHistoricData);
+  }, []);
+
+  useEffect(() => {
+    const chart = createChart(tempTimeseriesData, labels);
+    setChartRef(chart);
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    if (!chartRef) return;
+
+    updateData(chartRef, tempTimeseriesData, labels);
+    chartRef.update();
+  }, [chartRef, tempTimeseriesData, labels]);
 
   return (
     <div className="temp-chart">

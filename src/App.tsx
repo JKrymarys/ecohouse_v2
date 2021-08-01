@@ -1,6 +1,6 @@
-import "./App.css";
+import "./App.scss";
 
-import HouseInfo from "components/house-info/HouseInfo";
+import HouseInfo from "components/house-info/HistoricDataTable";
 import TempGraph from "components/temp-graph/TempGraph";
 
 function App() {

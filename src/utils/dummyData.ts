@@ -1,4 +1,6 @@
-export const dummyTempData = [
+import { TempEntry } from "./types";
+
+export const dummyTempData: TempEntry[] = [
   { dateTime: "2021-05-21T09:00:50", temp: 19 },
   { dateTime: "2021-05-21T10:00:50", temp: 20 },
   { dateTime: "2021-05-21T11:00:50", temp: 20.1 },

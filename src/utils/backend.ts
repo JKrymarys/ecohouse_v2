@@ -1,7 +1,10 @@
+import { dummyTempData } from "./dummyData";
 
-const apiBaseUrl = "http://0105f1f7c72c.ngrok.io";
+// const apiBaseUrl = "http://0105f1f7c72c.ngrok.io";
 
+// export const getCurrentState = async () =>
+//   fetch(`${apiBaseUrl}/current-house-state`)
+//     .then((response) => response.json())
+//     .catch((e) => console.log("Error", e));
 
-export const getCurrentState = async () => fetch(`${apiBaseUrl}/current-house-state`)
-    .then(response => response.json())
-    .catch(e => console.log("Error", e))
+export const getHistoricData = async () => Promise.resolve(dummyTempData);
