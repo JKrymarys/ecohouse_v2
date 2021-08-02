@@ -1,5 +1,28 @@
-#root {
-  width: 100vw;
-  height: 100vh;
-  padding: 20px;
+@import "~antd/dist/antd.css";
+
+$base-background-color: #f0f2f5;
+$secondary-background-color: #ebebeb;
+
+.main-layout {
+  min-height: 100vh;
+  background: $base-background-color;
+
+  .header {
+    padding: 10px 30px;
+    background: $base-background-color;
+
+    .page-title {
+      font-size: x-large;
+    }
+  }
+
+  .sider {
+    background: $secondary-background-color;
+  }
+
+  .footer {
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+  }
 }
