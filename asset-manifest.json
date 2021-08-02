@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ecohouse_v2/static/css/main.7b388e71.chunk.css",
-    "main.js": "/ecohouse_v2/static/js/main.ecc02e08.chunk.js",
-    "main.js.map": "/ecohouse_v2/static/js/main.ecc02e08.chunk.js.map",
+    "main.js": "/ecohouse_v2/static/js/main.c56acb15.chunk.js",
+    "main.js.map": "/ecohouse_v2/static/js/main.c56acb15.chunk.js.map",
     "runtime-main.js": "/ecohouse_v2/static/js/runtime-main.b3f709b1.js",
     "runtime-main.js.map": "/ecohouse_v2/static/js/runtime-main.b3f709b1.js.map",
     "static/js/2.9eafaf40.chunk.js": "/ecohouse_v2/static/js/2.9eafaf40.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b3f709b1.js",
     "static/js/2.9eafaf40.chunk.js",
     "static/css/main.7b388e71.chunk.css",
-    "static/js/main.ecc02e08.chunk.js"
+    "static/js/main.c56acb15.chunk.js"
   ]
 }
