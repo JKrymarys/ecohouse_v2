@@ -1,10 +1,13 @@
-import { dummyTempData } from "./dummyData";
+const API_URL = "https://8o8h5nqi81.execute-api.eu-west-2.amazonaws.com";
 
-// const apiBaseUrl = "http://0105f1f7c72c.ngrok.io";
+const routes = {
+  allData: "/getAllTempData",
+};
 
-// export const getCurrentState = async () =>
-//   fetch(`${apiBaseUrl}/current-house-state`)
-//     .then((response) => response.json())
-//     .catch((e) => console.log("Error", e));
-
-export const getHistoricData = async () => Promise.resolve(dummyTempData);
+export const getHistoricData = async () =>
+  fetch(`${API_URL}${routes.allData}`)
+    .then((response) => response.json())
+    .catch((e) => {
+      console.log("Error", e);
+      return [];
+    });
