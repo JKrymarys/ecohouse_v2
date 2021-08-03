@@ -6,7 +6,6 @@ import { getHistoricData } from "utils/backend";
 
 import { TempEntry } from "utils/types";
 
-import "./TempGraph.scss";
 import { useState } from "react";
 
 function updateData(chart: any, data: number[], labels: string[]) {
@@ -58,7 +57,7 @@ export default function TempGraph() {
   }, [chartRef, tempTimeseriesData, labels]);
 
   return (
-    <div className="temp-chart">
+    <div className="bg-white border-transparent rounded-lg shadow-xl p-10">
       <canvas id="myChart"></canvas>
     </div>
   );
