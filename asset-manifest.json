@@ -1,25 +1,22 @@
 {
   "files": {
-    "main.css": "/ecohouse_v2/static/css/main.fc602f6e.chunk.css",
-    "main.js": "/ecohouse_v2/static/js/main.114784bb.chunk.js",
-    "main.js.map": "/ecohouse_v2/static/js/main.114784bb.chunk.js.map",
-    "runtime-main.js": "/ecohouse_v2/static/js/runtime-main.fb796775.js",
-    "runtime-main.js.map": "/ecohouse_v2/static/js/runtime-main.fb796775.js.map",
-    "static/css/2.482f4483.chunk.css": "/ecohouse_v2/static/css/2.482f4483.chunk.css",
-    "static/js/2.5c839118.chunk.js": "/ecohouse_v2/static/js/2.5c839118.chunk.js",
-    "static/js/2.5c839118.chunk.js.map": "/ecohouse_v2/static/js/2.5c839118.chunk.js.map",
-    "static/js/3.cacf39aa.chunk.js": "/ecohouse_v2/static/js/3.cacf39aa.chunk.js",
-    "static/js/3.cacf39aa.chunk.js.map": "/ecohouse_v2/static/js/3.cacf39aa.chunk.js.map",
+    "main.css": "/ecohouse_v2/static/css/main.a4793c17.chunk.css",
+    "main.js": "/ecohouse_v2/static/js/main.2c4d1780.chunk.js",
+    "main.js.map": "/ecohouse_v2/static/js/main.2c4d1780.chunk.js.map",
+    "runtime-main.js": "/ecohouse_v2/static/js/runtime-main.740d59ea.js",
+    "runtime-main.js.map": "/ecohouse_v2/static/js/runtime-main.740d59ea.js.map",
+    "static/js/2.2484bfa4.chunk.js": "/ecohouse_v2/static/js/2.2484bfa4.chunk.js",
+    "static/js/2.2484bfa4.chunk.js.map": "/ecohouse_v2/static/js/2.2484bfa4.chunk.js.map",
+    "static/js/3.c7135d45.chunk.js": "/ecohouse_v2/static/js/3.c7135d45.chunk.js",
+    "static/js/3.c7135d45.chunk.js.map": "/ecohouse_v2/static/js/3.c7135d45.chunk.js.map",
     "index.html": "/ecohouse_v2/index.html",
-    "static/css/2.482f4483.chunk.css.map": "/ecohouse_v2/static/css/2.482f4483.chunk.css.map",
-    "static/css/main.fc602f6e.chunk.css.map": "/ecohouse_v2/static/css/main.fc602f6e.chunk.css.map",
-    "static/js/2.5c839118.chunk.js.LICENSE.txt": "/ecohouse_v2/static/js/2.5c839118.chunk.js.LICENSE.txt"
+    "static/css/main.a4793c17.chunk.css.map": "/ecohouse_v2/static/css/main.a4793c17.chunk.css.map",
+    "static/js/2.2484bfa4.chunk.js.LICENSE.txt": "/ecohouse_v2/static/js/2.2484bfa4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb796775.js",
-    "static/css/2.482f4483.chunk.css",
-    "static/js/2.5c839118.chunk.js",
-    "static/css/main.fc602f6e.chunk.css",
-    "static/js/main.114784bb.chunk.js"
+    "static/js/runtime-main.740d59ea.js",
+    "static/js/2.2484bfa4.chunk.js",
+    "static/css/main.a4793c17.chunk.css",
+    "static/js/main.2c4d1780.chunk.js"
   ]
 }
