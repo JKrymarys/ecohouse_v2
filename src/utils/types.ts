@@ -1,4 +1,4 @@
 export interface TempEntry {
-  dateTime: string;
+  timestamp: string;
   temp: number;
 }

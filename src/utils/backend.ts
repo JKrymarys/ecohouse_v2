@@ -9,6 +9,7 @@ const routes = {
 export const getHistoricData = async () =>
   fetch(`${API_URL}${routes.allData}`)
     .then((response) => response.json())
+    .then((data) => data.Items)
     .catch(() => {
       notification.open({
         message: "Couldn't fetch data",
