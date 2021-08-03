@@ -1,5 +1,3 @@
-import { notification } from "antd";
-
 const API_URL = "https://8o8h5nqi81.execute-api.eu-west-2.amazonaws.com";
 
 const routes = {
@@ -11,8 +9,6 @@ export const getHistoricData = async () =>
     .then((response) => response.json())
     .then((data) => data.Items)
     .catch(() => {
-      notification.open({
-        message: "Couldn't fetch data",
-      });
+      console.error("Couldn't fetch data");
       return [];
     });

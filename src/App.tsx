@@ -1,38 +1,23 @@
-import { Typography, Layout, Row, Col } from "antd";
-import { CoffeeOutlined } from "@ant-design/icons";
-
 import TempGraph from "components/temp-graph/TempGraph";
-
-import "./App.scss";
-
-const { Title, Text, Link } = Typography;
-const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
   const currentYear = new Date().getFullYear();
   return (
-    <Layout className="main-layout">
-      <Header className="header">
-        <Title className="page-title">Eco house - dashboard</Title>
-      </Header>
-      <Layout>
-        <Sider className="sider"></Sider>
-        <Content>
-          <Row justify="center">
-            <Col span={20}>
-              <TempGraph />
-            </Col>
-          </Row>
-        </Content>
-      </Layout>
-      <Footer className="footer">
-        <Text type="secondary">
-          Created with <CoffeeOutlined /> by
-          <Link href="https://www.jkrymarys.pl/"> jkrymarys.pl </Link>©
-          {currentYear}
-        </Text>
-      </Footer>
-    </Layout>
+    <div className="h-screen bg-gray-800 p-3">
+      <header className="text-2xl font-bold text-white h-1/6 flex justify-center">
+        Eco house - dashboard
+      </header>
+      <main className="mx-auto w-10/12 h-4/6">
+        <TempGraph />
+      </main>
+      <footer className="h-1/6 flex items-center justify-center w-full h-24 border-t text-white">
+        Created with ☕ &nbsp;
+        <a className="hover:text-gray-400" href="https://www.jkrymarys.pl/">
+          &nbsp;jkrymarys.pl&nbsp;
+        </a>
+        ©&nbsp;{currentYear}
+      </footer>
+    </div>
   );
 }
 
