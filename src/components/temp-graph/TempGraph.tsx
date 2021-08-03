@@ -38,7 +38,7 @@ export default function TempGraph() {
   const [chartRef, setChartRef] = useState<any>();
 
   const tempTimeseriesData = historicData.map(({ temp }: TempEntry) => temp);
-  const labels = historicData.map(({ dateTime }: TempEntry) => dateTime);
+  const labels = historicData.map(({ timestamp }: TempEntry) => timestamp);
 
   useEffect(() => {
     getHistoricData().then(setHistoricData);
