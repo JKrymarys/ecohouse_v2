@@ -21,7 +21,7 @@ function App() {
     getHistoricData()
       .then((data) => dispatch(houseDataLoaded(data)))
       .catch(() => dispatch(houseDataError()));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="h-screen bg-gray-800 p-3 flex flex-col justify-between">

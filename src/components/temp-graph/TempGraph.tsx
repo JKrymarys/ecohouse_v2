@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "store/hooks";
-
-import "chartjs-adapter-moment";
-
 import Chart from "chart.js/auto";
-
-import { getHistoricData } from "utils/backend";
+import "chartjs-adapter-moment";
 
 import { TempEntry } from "utils/types";
 

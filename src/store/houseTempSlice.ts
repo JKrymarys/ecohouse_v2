@@ -1,6 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
+import { HouseTempState } from './types';
 import { TempEntry } from 'utils/types'
+
+
 
 const DATA_STATUS = {
     loaded: {
@@ -20,18 +23,6 @@ const DATA_STATUS = {
     },
 }
 
-interface DataStatus {
-    loaded: boolean;
-    loading: boolean;
-    error: boolean;
-}
-// Define a type for the slice state
-interface HouseTempState {
-    data: TempEntry[],
-    status: DataStatus
-}
-
-// Define the initial state using that type
 const initialState: HouseTempState = {
     data: [],
     status: {
