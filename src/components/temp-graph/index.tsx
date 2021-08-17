@@ -73,7 +73,7 @@ export default function TempGraph() {
   return (
     <div
       className="bg-white border-transparent rounded-lg shadow-xl p-10"
-      style={{ position: "relative", height: "60vh", width: "80vw" }}
+      style={{ position: "relative", height: "60vh", width: "60vw" }}
     >
       <canvas id="myChart"></canvas>
     </div>

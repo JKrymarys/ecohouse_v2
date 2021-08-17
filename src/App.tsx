@@ -7,7 +7,8 @@ import {
   houseDataError,
 } from "./store/houseTempSlice";
 
-import TempGraph from "components/temp-graph/TempGraph";
+import TempGraph from "components/temp-graph";
+import CurrentState from "components/current-state";
 
 import { getHistoricData } from "utils/backend";
 
@@ -28,9 +29,12 @@ function App() {
       <header className="text-2xl font-bold text-white h-12 flex justify-center">
         Eco house - dashboard
       </header>
-      <main className="mx-auto flex flex-row p-6">
-        <div className="w-9/12">
+      <main className="flex flex-row p-6 justify-between items-stretch">
+        <div className="p-6">
           <TempGraph />
+        </div>
+        <div className="p-6 flex-grow">
+          <CurrentState />
         </div>
       </main>
       <footer className="h-12 flex items-center justify-center w-full border-t text-white">
