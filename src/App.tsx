@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useAppDispatch } from "store/hooks";
+import { useAppDispatch, useAppSelector } from "store/hooks";
 import {
   houseDataFetch,
   houseDataLoaded,
@@ -15,6 +15,7 @@ import { getHistoricData } from "utils/backend";
 function App() {
   const currentYear = new Date().getFullYear();
   const dispatch = useAppDispatch();
+  const { status } = useAppSelector((state) => state.houseTemp);
 
   useEffect(() => {
     dispatch(houseDataFetch());
@@ -23,6 +24,15 @@ function App() {
       .then((data) => dispatch(houseDataLoaded(data)))
       .catch(() => dispatch(houseDataError()));
   }, [dispatch]);
+
+  //TODO: improve loading and error handlers
+  if (status.loading) {
+    return <div>Loading....</div>;
+  }
+
+  if (status.error) {
+    return <div>Error!</div>;
+  }
 
   return (
     <div className="h-screen bg-gray-800 p-3 flex flex-col justify-between">
