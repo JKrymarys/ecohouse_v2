@@ -4,7 +4,7 @@ const API_URL =
 export const getHistoricData = async () =>
   fetch(API_URL)
     .then((response) => response.json())
-    .then((data) => data.Items)
+    .then((data) => data.Items.sort())
     .catch(() => {
       console.error("Couldn't fetch data");
       return [];

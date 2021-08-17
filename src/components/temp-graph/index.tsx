@@ -1,13 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useAppSelector } from "store/hooks";
+import Chart from "chart.js/auto";
 import "chartjs-adapter-moment";
 
-import Chart from "chart.js/auto";
-
-import { getHistoricData } from "utils/backend";
-
 import { TempEntry } from "utils/types";
-
-import { useState } from "react";
 
 interface ChartData {
   x: string;
@@ -52,17 +48,14 @@ const createChart = (tempData: ChartData[]) => {
 };
 
 export default function TempGraph() {
-  const [historicData, setHistoricData] = useState<any>([]);
+  const { data } = useAppSelector((state) => state.houseTemp);
+
   const [chartRef, setChartRef] = useState<any>();
 
-  const tempData = historicData.map(({ timestamp, temp }: TempEntry) => ({
+  const tempData = data.map(({ timestamp, temp }: TempEntry) => ({
     x: timestamp,
     y: temp,
   }));
-
-  useEffect(() => {
-    getHistoricData().then(setHistoricData);
-  }, []);
 
   useEffect(() => {
     const chart = createChart(tempData);
@@ -80,7 +73,7 @@ export default function TempGraph() {
   return (
     <div
       className="bg-white border-transparent rounded-lg shadow-xl p-10"
-      style={{ position: "relative", height: "60vh", width: "80vw" }}
+      style={{ position: "relative", height: "60vh", width: "60vw" }}
     >
       <canvas id="myChart"></canvas>
     </div>
