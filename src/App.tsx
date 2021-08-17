@@ -19,8 +19,8 @@ function App() {
     dispatch(houseDataFetch());
 
     getHistoricData()
-      .then((data) => houseDataLoaded(data))
-      .catch(() => houseDataError());
+      .then((data) => dispatch(houseDataLoaded(data)))
+      .catch(() => dispatch(houseDataError()));
   }, []);
 
   return (
