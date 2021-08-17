@@ -35,11 +35,11 @@ function App() {
   }
 
   return (
-    <div className="h-screen bg-gray-800 p-3 flex flex-col justify-between">
+    <div className="min-h-screen h-full bg-gray-800 p-3 flex flex-col justify-between">
       <header className="text-2xl font-bold text-white h-12 flex justify-center">
         Eco house - dashboard
       </header>
-      <main className="flex flex-row p-6 justify-between items-stretch">
+      <main className="flex flex-row flex-wrap p-6 justify-between items-stretch">
         <div className="p-6">
           <TempGraph />
         </div>
