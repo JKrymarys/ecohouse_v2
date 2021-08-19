@@ -4,6 +4,7 @@ import Chart from "chart.js/auto";
 import "chartjs-adapter-moment";
 
 import { StateEntry } from "utils/types";
+import * as Utils from "utils/chartUtils";
 
 interface ChartData {
   x: string;
@@ -27,19 +28,16 @@ const createChart = (tempData: ChartData[], pressureData: ChartData[]) => {
       datasets: [
         {
           data: tempData,
-          borderWidth: 1,
-          borderColor: "#AB2B00",
-          backgroundColor: "#D13400",
+          borderColor: Utils.CHART_COLORS.red,
+          backgroundColor: Utils.CHART_COLORS.redTransparent,
           label: "Temp",
           yAxisID: "tempY",
         },
         {
           data: pressureData,
-          borderWidth: 1,
-          borderColor: "blue",
-          backgroundColor: "blue",
+          borderColor: Utils.CHART_COLORS.blue,
+          backgroundColor: Utils.CHART_COLORS.blueTransparent,
           label: "Pressure",
-          type: "bar",
           yAxisID: "pressureY",
         },
       ],
