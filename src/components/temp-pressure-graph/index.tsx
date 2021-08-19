@@ -105,7 +105,7 @@ export default function TempPressureGraph() {
 
     updateData(chartRef, tempData, pressureData);
     chartRef.update();
-  }, [chartRef, tempData]);
+  }, [chartRef, tempData, pressureData]);
 
   return (
     <div

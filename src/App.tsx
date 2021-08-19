@@ -8,7 +8,7 @@ import {
 } from "./store/houseTempSlice";
 
 import TempPressureGraph from "components/temp-pressure-graph";
-import CurrentState from "components/current-state";
+import Stats from "components/stats";
 
 import { getHistoricData } from "utils/backend";
 
@@ -44,7 +44,7 @@ function App() {
           <TempPressureGraph />
         </div>
         <div className="p-6 flex-grow">
-          <CurrentState />
+          <Stats />
         </div>
       </main>
       <footer className="h-12 flex items-center justify-center w-full border-t text-white">
