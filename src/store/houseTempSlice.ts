@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { HouseTempState } from './types';
-import { TempEntry } from 'utils/types'
+import { SensorData } from './types';
+import { StateEntry } from 'utils/types'
 
 
 
@@ -23,7 +23,7 @@ const DATA_STATUS = {
     },
 }
 
-const initialState: HouseTempState = {
+const initialState: SensorData = {
     data: [],
     status: {
         loaded: false,
@@ -39,7 +39,7 @@ export const houseTempSlice = createSlice({
         houseDataFetch: (state) => {
             state.status = DATA_STATUS.loading
         },
-        houseDataLoaded: (state, action: PayloadAction<TempEntry[]>) => {
+        houseDataLoaded: (state, action: PayloadAction<StateEntry[]>) => {
             state.status = DATA_STATUS.loaded;
             state.data = action.payload;
         },

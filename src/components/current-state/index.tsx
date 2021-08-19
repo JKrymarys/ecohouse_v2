@@ -1,10 +1,10 @@
 import { useAppSelector } from "store/hooks";
 import "chartjs-adapter-moment";
-import { TempEntry } from "utils/types";
+import { StateEntry } from "utils/types";
 
-function calculateMean(data: TempEntry[]) {
+function calculateMean(data: StateEntry[]) {
   return (
-    data.reduce((mean: number, dataEntry: TempEntry) => {
+    data.reduce((mean: number, dataEntry: StateEntry) => {
       mean += dataEntry.temp;
       return mean;
     }, 0) / data.length
@@ -17,7 +17,9 @@ export default function CurrentState() {
   const { data } = useAppSelector((state) => state.houseTemp);
 
   const lastEntry = data[data.length - 1];
-  const todayEntries = data.filter((e) => e.timestamp.includes(today));
+  const todayEntries = data.filter((e: StateEntry) =>
+    e.timestamp.includes(today)
+  );
 
   const lastEntryDatetime = new Date(
     Date.parse(lastEntry?.timestamp)

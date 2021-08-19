@@ -7,7 +7,7 @@ import {
   houseDataError,
 } from "./store/houseTempSlice";
 
-import TempGraph from "components/temp-graph";
+import TempPressureGraph from "components/temp-pressure-graph";
 import CurrentState from "components/current-state";
 
 import { getHistoricData } from "utils/backend";
@@ -41,7 +41,7 @@ function App() {
       </header>
       <main className="flex flex-row flex-wrap p-6 justify-between items-stretch">
         <div className="p-6">
-          <TempGraph />
+          <TempPressureGraph />
         </div>
         <div className="p-6 flex-grow">
           <CurrentState />

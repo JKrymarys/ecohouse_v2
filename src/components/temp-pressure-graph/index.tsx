@@ -3,19 +3,24 @@ import { useAppSelector } from "store/hooks";
 import Chart from "chart.js/auto";
 import "chartjs-adapter-moment";
 
-import { TempEntry } from "utils/types";
+import { StateEntry } from "utils/types";
 
 interface ChartData {
   x: string;
   y: number;
 }
 
-function updateData(chart: any, tempData: ChartData[]) {
+function updateData(
+  chart: any,
+  tempData: ChartData[],
+  pressureData: ChartData[]
+) {
   chart.data.datasets[0].data = tempData;
+  chart.data.datasets[1].data = pressureData;
   chart.update();
 }
 
-const createChart = (tempData: ChartData[]) => {
+const createChart = (tempData: ChartData[], pressureData: ChartData[]) => {
   return new Chart("myChart", {
     type: "line",
     data: {
@@ -26,11 +31,26 @@ const createChart = (tempData: ChartData[]) => {
           borderColor: "#AB2B00",
           backgroundColor: "#D13400",
           label: "Temp",
+          yAxisID: "tempY",
+        },
+        {
+          data: pressureData,
+          borderWidth: 1,
+          borderColor: "blue",
+          backgroundColor: "blue",
+          label: "Pressure",
+          type: "bar",
+          yAxisID: "pressureY",
         },
       ],
     },
     options: {
       maintainAspectRatio: false,
+      interaction: {
+        mode: "index",
+        intersect: false,
+      },
+
       scales: {
         x: {
           type: "time",
@@ -42,23 +62,42 @@ const createChart = (tempData: ChartData[]) => {
             text: "Date",
           },
         },
+        tempY: {
+          type: "linear",
+          display: true,
+          position: "left",
+        },
+        pressureY: {
+          type: "linear",
+          display: true,
+          position: "right",
+          // grid line settings
+          grid: {
+            drawOnChartArea: false, // only want the grid lines for one axis to show up
+          },
+        },
       },
     },
   });
 };
 
-export default function TempGraph() {
+export default function TempPressureGraph() {
   const { data } = useAppSelector((state) => state.houseTemp);
 
   const [chartRef, setChartRef] = useState<any>();
 
-  const tempData = data.map(({ timestamp, temp }: TempEntry) => ({
+  const tempData = data.map(({ timestamp, temp }: StateEntry) => ({
     x: timestamp,
     y: temp,
   }));
 
+  const pressureData = data.map(({ timestamp, pressure }: StateEntry) => ({
+    x: timestamp,
+    y: pressure,
+  }));
+
   useEffect(() => {
-    const chart = createChart(tempData);
+    const chart = createChart(tempData, pressureData);
     setChartRef(chart);
     // eslint-disable-next-line
   }, []);
@@ -66,7 +105,7 @@ export default function TempGraph() {
   useEffect(() => {
     if (!chartRef) return;
 
-    updateData(chartRef, tempData);
+    updateData(chartRef, tempData, pressureData);
     chartRef.update();
   }, [chartRef, tempData]);
 
