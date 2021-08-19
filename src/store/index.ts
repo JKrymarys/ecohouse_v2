@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import houseTempSlice from './houseTempSlice'
+import sensorStats from './sensorStatsSlice'
 
 const store = configureStore({
     reducer: {
-        houseTemp: houseTempSlice
+        sensorStats: sensorStats
     },
 })
 

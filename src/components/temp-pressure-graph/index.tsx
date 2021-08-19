@@ -80,7 +80,7 @@ const createChart = (tempData: ChartData[], pressureData: ChartData[]) => {
 };
 
 export default function TempPressureGraph() {
-  const { data } = useAppSelector((state) => state.houseTemp);
+  const { data } = useAppSelector((state) => state.sensorStats);
 
   const [chartRef, setChartRef] = useState<any>();
 

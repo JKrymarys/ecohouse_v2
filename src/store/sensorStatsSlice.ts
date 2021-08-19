@@ -32,8 +32,8 @@ const initialState: SensorData = {
     }
 }
 
-export const houseTempSlice = createSlice({
-    name: 'houseTemperature',
+export const sensorStats = createSlice({
+    name: 'sensorStats',
     initialState,
     reducers: {
         houseDataFetch: (state) => {
@@ -49,6 +49,6 @@ export const houseTempSlice = createSlice({
     },
 })
 
-export const { houseDataFetch, houseDataLoaded, houseDataError } = houseTempSlice.actions;
+export const { houseDataFetch, houseDataLoaded, houseDataError } = sensorStats.actions;
 
-export default houseTempSlice.reducer
+export default sensorStats.reducer;

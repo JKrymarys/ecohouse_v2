@@ -5,7 +5,7 @@ import {
   houseDataFetch,
   houseDataLoaded,
   houseDataError,
-} from "./store/houseTempSlice";
+} from "./store/sensorStatsSlice";
 
 import TempPressureGraph from "components/temp-pressure-graph";
 import Stats from "components/stats";
@@ -15,7 +15,7 @@ import { getHistoricData } from "utils/backend";
 function App() {
   const currentYear = new Date().getFullYear();
   const dispatch = useAppDispatch();
-  const { status } = useAppSelector((state) => state.houseTemp);
+  const { status } = useAppSelector((state) => state.sensorStats);
 
   useEffect(() => {
     dispatch(houseDataFetch());

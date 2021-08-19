@@ -24,7 +24,7 @@ function calculateMeanPressure(data: StateEntry[]) {
 const today = new Date().toISOString().slice(0, 10);
 
 export default function Stats() {
-  const { data } = useAppSelector((state) => state.houseTemp);
+  const { data } = useAppSelector((state) => state.sensorStats);
 
   const lastEntry = data[data.length - 1];
   const todayEntries = data.filter((e: StateEntry) =>
