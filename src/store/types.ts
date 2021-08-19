@@ -1,4 +1,4 @@
-import { TempEntry } from 'utils/types'
+import { StateEntry } from 'utils/types'
 
 
 export interface DataStatus {
@@ -7,7 +7,7 @@ export interface DataStatus {
     error: boolean;
 }
 
-export interface HouseTempState {
-    data: TempEntry[],
+export interface SensorData {
+    data: StateEntry[],
     status: DataStatus
 }

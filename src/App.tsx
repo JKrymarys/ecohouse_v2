@@ -5,17 +5,17 @@ import {
   houseDataFetch,
   houseDataLoaded,
   houseDataError,
-} from "./store/houseTempSlice";
+} from "./store/sensorStatsSlice";
 
-import TempGraph from "components/temp-graph";
-import CurrentState from "components/current-state";
+import TempPressureGraph from "components/temp-pressure-graph";
+import Stats from "components/stats";
 
 import { getHistoricData } from "utils/backend";
 
 function App() {
   const currentYear = new Date().getFullYear();
   const dispatch = useAppDispatch();
-  const { status } = useAppSelector((state) => state.houseTemp);
+  const { status } = useAppSelector((state) => state.sensorStats);
 
   useEffect(() => {
     dispatch(houseDataFetch());
@@ -41,10 +41,10 @@ function App() {
       </header>
       <main className="flex flex-row flex-wrap p-6 justify-between items-stretch">
         <div className="p-6">
-          <TempGraph />
+          <TempPressureGraph />
         </div>
         <div className="p-6 flex-grow">
-          <CurrentState />
+          <Stats />
         </div>
       </main>
       <footer className="h-12 flex items-center justify-center w-full border-t text-white">
