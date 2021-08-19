@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ecohouse_v2/static/css/main.066a6e1a.chunk.css",
-    "main.js": "/ecohouse_v2/static/js/main.bbf2aada.chunk.js",
-    "main.js.map": "/ecohouse_v2/static/js/main.bbf2aada.chunk.js.map",
+    "main.css": "/ecohouse_v2/static/css/main.a7250e07.chunk.css",
+    "main.js": "/ecohouse_v2/static/js/main.6974c54f.chunk.js",
+    "main.js.map": "/ecohouse_v2/static/js/main.6974c54f.chunk.js.map",
     "runtime-main.js": "/ecohouse_v2/static/js/runtime-main.3ab07b58.js",
     "runtime-main.js.map": "/ecohouse_v2/static/js/runtime-main.3ab07b58.js.map",
     "static/js/2.ffeb71c6.chunk.js": "/ecohouse_v2/static/js/2.ffeb71c6.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.8ade8ce5.chunk.js": "/ecohouse_v2/static/js/3.8ade8ce5.chunk.js",
     "static/js/3.8ade8ce5.chunk.js.map": "/ecohouse_v2/static/js/3.8ade8ce5.chunk.js.map",
     "index.html": "/ecohouse_v2/index.html",
-    "static/css/main.066a6e1a.chunk.css.map": "/ecohouse_v2/static/css/main.066a6e1a.chunk.css.map",
+    "static/css/main.a7250e07.chunk.css.map": "/ecohouse_v2/static/css/main.a7250e07.chunk.css.map",
     "static/js/2.ffeb71c6.chunk.js.LICENSE.txt": "/ecohouse_v2/static/js/2.ffeb71c6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3ab07b58.js",
     "static/js/2.ffeb71c6.chunk.js",
-    "static/css/main.066a6e1a.chunk.css",
-    "static/js/main.bbf2aada.chunk.js"
+    "static/css/main.a7250e07.chunk.css",
+    "static/js/main.6974c54f.chunk.js"
   ]
 }
