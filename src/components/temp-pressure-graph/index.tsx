@@ -64,12 +64,15 @@ const createChart = (tempData: ChartData[], pressureData: ChartData[]) => {
           type: "linear",
           display: true,
           position: "left",
+          suggestedMin: 10,
+          suggestedMax: 40,
         },
         pressureY: {
           type: "linear",
           display: true,
           position: "right",
-          // grid line settings
+          suggestedMin: 960,
+          suggestedMax: 1050,
           grid: {
             drawOnChartArea: false, // only want the grid lines for one axis to show up
           },
