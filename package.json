@@ -47,7 +47,18 @@
     ],
     "rules": {
       "no-unused-vars": "warn"
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
+        "rules": {
+          "no-undef": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [

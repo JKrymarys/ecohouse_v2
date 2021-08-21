@@ -98,18 +98,21 @@ const createChart = (tempData: ChartData[], pressureData: ChartData[]) => {
 
 export default function TempPressureGraph() {
   const { data } = useAppSelector((state) => state.sensorStats);
+  const [filteredData, setFilteredData] = useState<any>(data);
 
   const [chartRef, setChartRef] = useState<any>();
 
-  const tempData = data.map(({ timestamp, temp }: StateEntry) => ({
+  const tempData = filteredData.map(({ timestamp, temp }: StateEntry) => ({
     x: timestamp,
     y: temp,
   }));
 
-  const pressureData = data.map(({ timestamp, pressure }: StateEntry) => ({
-    x: timestamp,
-    y: pressure,
-  }));
+  const pressureData = filteredData.map(
+    ({ timestamp, pressure }: StateEntry) => ({
+      x: timestamp,
+      y: pressure,
+    })
+  );
 
   useEffect(() => {
     const chart = createChart(tempData, pressureData);
@@ -124,6 +127,27 @@ export default function TempPressureGraph() {
     chartRef.update();
   }, [chartRef, tempData, pressureData]);
 
+  //controls
+
+  const earliestTimestamp = data[0] && data[0].timestamp;
+  const latestTimestamp =
+    data[data.length - 1] && data[data.length - 1].timestamp;
+
+  const [dateFrom, setDateFrom] = useState<string>(earliestTimestamp);
+  const [dateTo, setDateTo] = useState<string>(latestTimestamp);
+
+  useEffect(() => {
+    const filteredData = data.filter(
+      ({ timestamp }) => timestamp > dateFrom && timestamp < dateTo
+    );
+
+    setFilteredData(filteredData);
+  }, [dateFrom, dateTo]);
+
+  function resetChart() {
+    setFilteredData(data);
+  }
+
   return (
     <>
       <div
@@ -133,9 +157,22 @@ export default function TempPressureGraph() {
         <canvas id="myChart"></canvas>
       </div>
 
-      <div>
-        <Button />
-        <Datepicker />
+      <div className="text-white ">
+        Show data from:
+        <Datepicker
+          value={dateFrom}
+          onChange={setDateFrom}
+          min={earliestTimestamp}
+          max={latestTimestamp}
+        />
+        to
+        <Datepicker
+          value={dateTo}
+          onChange={setDateTo}
+          min={earliestTimestamp}
+          max={latestTimestamp}
+        />
+        <Button onClick={resetChart}> Reset</Button>
       </div>
     </>
   );
