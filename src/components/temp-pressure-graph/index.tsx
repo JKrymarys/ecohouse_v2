@@ -6,6 +6,9 @@ import "chartjs-adapter-moment";
 import { StateEntry } from "utils/types";
 import * as Utils from "utils/chartUtils";
 
+import Button from "components/controls/Button";
+import Datepicker from "components/controls/Datepicker";
+
 interface ChartData {
   x: string;
   y: number;
@@ -51,13 +54,24 @@ const createChart = (tempData: ChartData[], pressureData: ChartData[]) => {
 
       scales: {
         x: {
-          type: "time",
+          type: "timeseries",
           time: {
             tooltipFormat: "lll",
           },
-          title: {
-            display: true,
-            text: "Date",
+          ticks: {
+            autoSkip: false,
+            maxRotation: 0,
+            major: {
+              enabled: true,
+            },
+            //@ts-ignore
+            font: (context: any) => {
+              if (context.tick && context.tick.major) {
+                return {
+                  weight: "bold",
+                };
+              }
+            },
           },
         },
         tempY: {
@@ -111,11 +125,18 @@ export default function TempPressureGraph() {
   }, [chartRef, tempData, pressureData]);
 
   return (
-    <div
-      className="bg-white border-transparent rounded-lg shadow-xl p-10"
-      style={{ position: "relative", height: "60vh", width: "60vw" }}
-    >
-      <canvas id="myChart"></canvas>
-    </div>
+    <>
+      <div
+        className="bg-white border-transparent rounded-lg shadow-xl p-10"
+        style={{ position: "relative", height: "60vh", width: "60vw" }}
+      >
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div>
+        <Button />
+        <Datepicker />
+      </div>
+    </>
   );
 }
